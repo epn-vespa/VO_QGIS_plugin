@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/plugins/VESPA" >
+        <file>iconVESPA.png</file>
+        <file>iconReceiver.png</file>
+    </qresource>
+</RCC>
