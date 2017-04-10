@@ -1,3 +1,4 @@
+from astropy.utils.data import download_file # fixes timeout bug
 from astropy.vo.samp import SAMPIntegratedClient
 from astropy.table import Table
 import threading, time
@@ -68,7 +69,8 @@ class scriptReceiver(object):
         def q(): # case MTYPE: table.load.votable
             say('SAMP Params are: ' + str(self.r.params))
             MSG('Loading VOtable\n from url: \n'+self.r.params['url'])
-            vot  = Table.read(self.r.params['url'])
+            #vot  = Table.read(self.r.params['url'])
+            vot = Table.read(download_file(self.r.params['url'],timeout=200)) #fixes timeout bug
             mURL = tempfile.mkdtemp()
             MSG("converting to GeoJSON")
             def getParts(sRegion):
