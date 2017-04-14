@@ -11,6 +11,8 @@ It accepts VOTables sent from other applications, provided they contain s_region
 Plugin "GAVOImage" uses thumbnail_url and a few other EPN-TAP2.0 standard fields to load a tumbnail image onto the canvas also georeferencing it over the polygon. At present it can only load one image at a time. 
 This "GAVOImage" plugin has been tested on CRISM table available from epn1.epn-vespa.jacobs-university.de. In combination with WMS layers exposed on the same server this is a nice tool for planetary exploration.
 
+Plugin "polyToAladin" uses s_region field of selected features (can select more than one) to send them via SAMP to Aladin.
+
 # Prerequisites:
 To install astropy, python.h may be required by pip (python-dev). 
 Also need python modules shapefile and geojson. 
