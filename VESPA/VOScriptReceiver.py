@@ -137,7 +137,9 @@ class VOScriptReceiver:
             if spread > 180:
                 lon = [[x, x-360][x>180] for x in llon]
             lat=sRegion.split(' ')[2:][1::2]
-            return [[[360-float(lon[i]),float(lat[i])] for i in range(len(lat))]]
+            ## NEXT LINE CONTROLS CRS EASTWARDS VS WESTWARDS (comment out the one you don't want)
+#            return [[[360-float(lon[i]),float(lat[i])] for i in range(len(lat))]] # WEST INCREASING
+            return [[[    float(lon[i]),float(lat[i])] for i in range(len(lat))]] # EAST INCREASING
         self.dlg.label.setText('define writeRecord')
         def writeRecord(rowNumber):
             w.poly(getParts(vot['s_region'][rowNumber]))
@@ -158,7 +160,9 @@ class VOScriptReceiver:
             if spread > 180:
                 lon = [[x, x-360][x>180] for x in llon]
             lat=sRegion.split(' ')[2:][1::2]
-            return [[[360-float(lon[i]),float(lat[i])] for i in range(len(lat))]]
+            ## NEXT LINE CONTROLS CRS EASTWARDS VS WESTWARDS (comment out the one you don't want)
+#            return [[[360-float(lon[i]),float(lat[i])] for i in range(len(lat))]] # WEST INCREASING
+            return [[[    float(lon[i]),float(lat[i])] for i in range(len(lat))]] # EAST INCREASING
         self.dlg.label.setText('making feature')
         makeFeature=lambda coords, props: {"type":"Feature","geometry": { "type": "Polygon", "coordinates": coords},"properties": props}
         self.dlg.label.setText('making dump')

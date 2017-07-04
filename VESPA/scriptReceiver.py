@@ -79,7 +79,9 @@ class scriptReceiver(object):
                 if (lon.max()-lon.min()) > 180:
                     lon = [[x, x-360][x>180] for x in lon]
                 lat=sRegion.split(' ')[2:][1::2]
-                parts = [[360-float(lon[i]),float(lat[i])] for i in range(len(lat))]
+                ## NEXT LINE CONTROLS CRS EASTWARDS VS WESTWARDS (comment out the one you don't want)
+#                parts = [[360-float(lon[i]),float(lat[i])] for i in range(len(lat))]
+                parts = [[    float(lon[i]),float(lat[i])] for i in range(len(lat))]
                 if not (parts[0]==parts[-1]): parts.append(parts[0])
                 return [parts]
             makeFeat      = lambda coords, props: {"type":"Feature","geometry": { "type": "Polygon", "coordinates": coords},"properties": props}
