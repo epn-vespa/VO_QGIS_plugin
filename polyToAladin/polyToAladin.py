@@ -43,6 +43,7 @@ import qgis
 import urllib
 #import iface
 
+say= QgsMessageLog.logMessage
 
 
 
@@ -223,8 +224,15 @@ class polyToAladin:
 ##              print "Please select only one feature"
     #
         mfl=getSelFeat()
+#        say("hello")
+#        say(str(mfl[0].attribute('s_region')))
         for mf in mfl:
-            featPolygon=mf.attribute('s_region')
+            q=mf.attribute('s_region')
+            fpHead=' '.join(q.split(' ')[:2])
+            w=q.split(' ')[2:]
+            fpBody=' '.join([' '.join(y) for y in list(zip([str(360-float(x)) for x in w[::2]],w[1::2]))])
+            featPolygon = fpHead + fpBody
+#            say(featPolygon)
             params={}
             params["script"]=featPolygon
             message = {}
