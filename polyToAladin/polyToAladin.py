@@ -230,7 +230,7 @@ class polyToAladin:
             q=mf.attribute('s_region')
             fpHead=' '.join(q.split(' ')[:2])
             w=q.split(' ')[2:]
-            fpBody=' '.join([' '.join(y) for y in list(zip([str(360-float(x)) for x in w[::2]],w[1::2]))])
+            fpBody=' '.join([' '.join(y) for y in list(zip(w[1::2],[str(360-float(x)) for x in w[::2]]))])
             featPolygon = fpHead + fpBody
 #            say(featPolygon)
             params={}
