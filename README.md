@@ -14,8 +14,20 @@ This "GAVOImage" plugin has been tested on CRISM table available from epn1.epn-v
 Plugin "polyToAladin" uses s_region field of selected features (can select more than one) to send them via SAMP to Aladin.
 
 # Prerequisites:
+* PyQt4
+* os
+* qgis
+* astropy
+* shapefile
+* numpy
+* tempfile
+* geojson
+* urllib
+* threading
+* time
+
 To install astropy, python.h may be required by pip (python-dev). 
-Also need python modules shapefile and geojson. 
+Also python modules shapefile and geojson are usually not installed by default. 
 To install all this on Ubuntu, say:
 
     sudo apt-get install python-dev
