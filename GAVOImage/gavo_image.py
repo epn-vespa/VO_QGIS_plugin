@@ -28,7 +28,7 @@ import resources
 from gavo_image_dialog import GAVOImageDialog
 import os.path
 
-import os.path
+#import os.path
 import threading, time
 from qgis.core import *
 from astropy.table import Table
