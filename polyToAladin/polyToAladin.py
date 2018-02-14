@@ -20,7 +20,7 @@
  *                                                                         *
  ***************************************************************************/
 """
-from astropy.vo.samp import SAMPIntegratedClient
+from astropy.samp import SAMPIntegratedClient
 
 from PyQt4.QtCore import QSettings, QTranslator, qVersion, QCoreApplication
 from PyQt4.QtGui import QAction, QIcon

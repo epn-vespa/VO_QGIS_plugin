@@ -28,8 +28,8 @@ from PyQt4 import QtGui
 import resources
 import threading
 
-from astropy.vo.samp import SAMPHubServer
-from astropy.vo.samp.hub import WebProfileDialog
+from astropy.samp import SAMPHubServer
+from astropy.samp.hub import WebProfileDialog
 
 from .scriptReceiver import scriptReceiver
 from .myHUB import *

@@ -3,8 +3,8 @@ import resources
 import threading
 import sys
 import os
-from astropy.vo.samp import SAMPHubServer
-from astropy.vo.samp.hub import WebProfileDialog
+from astropy.samp import SAMPHubServer
+from astropy.samp.hub import WebProfileDialog
 import threading
 import time
 from qgis.core    import QgsProject, QgsMessageLog

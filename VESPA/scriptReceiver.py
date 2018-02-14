@@ -1,5 +1,5 @@
 from astropy.utils.data import download_file # fixes timeout bug
-from astropy.vo.samp import SAMPIntegratedClient
+from astropy.samp import SAMPIntegratedClient
 from astropy.table import Table
 import threading, time
 from qgis.core import *
