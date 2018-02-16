@@ -109,7 +109,7 @@ class scriptReceiver(object):
             QgsVectorFileWriter.writeAsVectorFormat(vlayer, mURL+r"/vot.sqlite","utf-8",None,"SpatiaLite")
             say("loading SpatiaLite")
             vlayer = QgsVectorLayer(                        mURL+r"/vot.sqlite",str(self.r.params['name']),"ogr")
-            say(vot.meta['description'])
+#            say(vot.meta['description']) #description is not available with complex queries
 #            vlayer = QgsVectorLayer(                        mURL+r"/vot.sqlite",str(vot.meta['description']),"ogr")
             say("adding layer to canvas")
             self.addVLayerToCanvas(vlayer)
