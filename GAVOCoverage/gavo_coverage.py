@@ -83,6 +83,9 @@ def LoadRasterFromSelectedFeature(miface):
     srs = osr.SpatialReference()
     srs.ImportFromProj4(str(CovProj))
     dataset.SetProjection( srs.ExportToWkt() )
+    q=dataset.GetRasterBand(1)#
+    q.SetNoDataValue(65535)#
+    q=None#
     dataset=None
 # Add layer to the map:
     coverageRasterCubeLayer=iface.addRasterLayer(destinationTarget, destinationFileName)
@@ -93,10 +96,10 @@ def LoadRasterFromSelectedFeature(miface):
     coverageRasterCubeLayer.setCrs(myCRS)
     cRBC=coverageRasterCubeLayer.bandCount()
     QgsMessageLog.logMessage('coverage contains ' + str(cRBC) + ' bands')
-    QgsMessageLog.logMessage('Assuming NODATA = 65535')
+#    QgsMessageLog.logMessage('Assuming NODATA = 65535')
     coverageLayerDataProvider=coverageRasterCubeLayer.dataProvider()
 #    coverageLayerDataProvider.setNoDataValue(1,65535)
-    for i in range(1, cRBC + 1): coverageLayerDataProvider.setNoDataValue(i,65535)
+#    for i in range(1, cRBC + 1): coverageLayerDataProvider.setNoDataValue(i,65535)
     coverageRenderer=QgsMultiBandColorRenderer(coverageLayerDataProvider,int(0.5+cRBC/6),int(0.5+cRBC/2),int(0.5+5*cRBC/6))
     QgsMessageLog.logMessage('setting up contrast enhancement')
     def getContrastEnhancer():
