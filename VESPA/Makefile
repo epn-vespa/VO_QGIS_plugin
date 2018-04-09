@@ -38,7 +38,8 @@ LOCALES =
 # translation
 SOURCES = \
 	__init__.py \
-	VESPA.py VESPA_dialog.py
+#	VESPA.py VESPA_dialog.py
+	VESPA.py hubRunner.py clientRunner.py clientRunnerDialog.py
 
 PLUGINNAME = VESPA
 
@@ -46,9 +47,11 @@ PY_FILES = \
 	__init__.py \
 	VESPA.py VESPA.py
 
-UI_FILES = VESPA_dialog_base.ui
+#UI_FILES = VESPA_dialog_base.ui
+UI_FILES = clientRunnerDialog_base.ui
 
-EXTRAS = metadata.txt icon.png
+#EXTRAS = metadata.txt icon.png
+EXTRAS = metadata.txt iconReceiver.png iconVESPA.png
 
 EXTRA_DIRS =
 

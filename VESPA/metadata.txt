@@ -8,9 +8,9 @@
 
 [general]
 name=VESPA
-qgisMinimumVersion=2.4
+qgisMinimumVersion=2.8
 description=Provides QGIS interface to VESPA suite
-version=0.1
+version=0.2
 author=Mikhail Minin
 email=m.minin@jacobs-university.de
 
@@ -32,7 +32,8 @@ tags=VESPA, VO
 #### CHANGE THIS TO WHATEVER ####
 homepage=https://github.com/mminin/QGIS-misc-plugins
 category=Web
-icon=iconAZ.png
+#icon=iconAZ.png
+icon=iconVESPA.png
 # experimental flag
 experimental=True
 

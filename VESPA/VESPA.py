@@ -21,18 +21,22 @@
  ***************************************************************************/
 """
 from qgis.core    import QgsProject, QgsMessageLog
-from PyQt4.QtCore import QSettings, QTranslator, qVersion, QCoreApplication
+#from PyQt4.QtCore import QSettings, QTranslator, qVersion, QCoreApplication
 from PyQt4.QtGui  import QAction,   QIcon,       QMenu,    QMessageBox
 from PyQt4 import QtCore
 from PyQt4 import QtGui
 import resources
-import threading
+#import threading as tthreading
 
-from astropy.samp import SAMPHubServer
-from astropy.samp.hub import WebProfileDialog
+#from astropy.samp import SAMPHubServer
+#from astropy.samp.hub import WebProfileDialog
 
-from .scriptReceiver import scriptReceiver
-from .myHUB import *
+#from .scriptReceiver import scriptReceiver
+#from .myHUB import *
+
+from .hubRunner import HubRunner
+from .clientRunner import ClientRunner
+
 
 class VESPA:
     def __init__(self, iface):
@@ -67,13 +71,17 @@ class VESPA:
             callback  = self.startSampHub)
         self.create_action(
             icon_path = ':/plugins/VESPA/iconReceiver.png',
-            text      = u'start SAMP Hub',
-            callback  = self.startReceiver)
+            text      = u'start SAMP Client',
+#            callback  = self.startReceiver)
+            callback  = self.startSampClient)
 
     def startSampHub(self):
-        self.sh=HUBrunner(self.iface, self.pinstance)
+#        self.sh=HUBrunner(self.iface, self.pinstance)
+        self.sh=HubRunner(self.iface, self.pinstance)
         self.sh.run()
 
-    def startReceiver(self):
-        self.r=scriptReceiver(self.iface, self.pinstance)
+#    def startReceiver(self):
+    def startSampClient(self):
+#        self.r=scriptReceiver(self.iface, self.pinstance)
+        self.r=ClientRunner(self.iface, self.pinstance)
         self.r.run()
