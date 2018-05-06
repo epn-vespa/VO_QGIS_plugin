@@ -1,5 +1,9 @@
 from astropy.utils.data import download_file # fixes timeout bug
-from astropy.samp import SAMPIntegratedClient
+#from astropy.samp import SAMPIntegratedClient
+try:
+    from astropy.samp import SAMPIntegratedClient
+except ImportError:
+    from astropy.vo.samp import SAMPIntegratedClient
 from astropy.table import Table
 import threading#, time
 import time as ttime
