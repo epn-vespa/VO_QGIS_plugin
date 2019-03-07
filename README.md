@@ -18,7 +18,7 @@ Plugin "polyToAladin" uses s_region field of selected features (can select more 
 * os
 * qgis
 * astropy
-* shapefile
+* pyshp (module shapefile)
 * numpy
 * tempfile
 * geojson
